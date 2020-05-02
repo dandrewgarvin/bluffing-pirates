@@ -257,8 +257,11 @@ io.on("connection", (socket) => {
         // if all matches in room are ended, re-generate match list
 
         // let both players know the match is over
-        socket.emit("round ended", { ended: true });
-        io.to(opponent).emit("round ended", { ended: true });
+        socket.emit("round ended", { ended: true, winner: match.winner });
+        io.to(opponent).emit("round ended", {
+          ended: true,
+          winner: match.winner,
+        });
 
         return null;
       } else {
