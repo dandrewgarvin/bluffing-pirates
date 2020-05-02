@@ -25,8 +25,8 @@ function init() {
     roomId += characters[Math.floor(Math.random() * characters.length)];
   }
 
-  // document.getElementById("room_id").value = roomId;
-  document.getElementById("room_id").value = "test";
+  document.getElementById("room_id").value = roomId;
+  // document.getElementById("room_id").value = "test";
 
   // update initial status
   UPDATE_STATUS(STATUSES.IDLE);
@@ -51,7 +51,7 @@ function updatePlayers() {
   }
 
   // enable the start button
-  if (players.length >= 1) {
+  if (players.length >= 2) {
     document.getElementById("start").disabled = false;
   }
 
