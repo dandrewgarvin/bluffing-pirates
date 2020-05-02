@@ -1,0 +1,148 @@
+h1 {
+  font-family: "Jost";
+  font-size: 48px;
+  text-align: center;
+  margin: 10px;
+}
+
+#STATUS {
+  position: absolute;
+  font-size: 12px;
+  top: 2px;
+  left: 2px;
+}
+
+.meta {
+  width: 90%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.meta input {
+  padding: 10px;
+  min-width: 250px;
+  border-radius: 4px;
+  border: 1px solid #777;
+  outline: none;
+}
+
+.meta button {
+  padding: 10px 20px;
+  border-radius: 4px;
+  border: 1px solid #fff;
+  color: #fff;
+  background: #22963f;
+  outline: none;
+  cursor: pointer;
+}
+
+.meta button:disabled {
+  background: #777;
+  cursor: not-allowed;
+}
+
+ul {
+  width: 90%;
+  margin: auto;
+  padding-top: 15px;
+}
+
+#match {
+  min-height: 50vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+}
+
+#match .container {
+  padding-top: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#match .container h2 {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+#match .container .currency {
+  font-size: 76px;
+  margin-bottom: 10px;
+  color: #d6c318;
+}
+
+#match .container .player-action {
+  display: none;
+  margin-top: 50px;
+  font-size: 52px;
+  color: #1ec218;
+}
+
+#match .container .actions {
+  width: 60%;
+  margin-top: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#match .container .actions button {
+  margin: 10px;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  outline: none;
+}
+
+#match .container .actions button.raise {
+  background: #099c15;
+}
+
+#match .container .actions button.raise:hover {
+  background: #33b13e;
+}
+
+#match .container .actions button.steal {
+  background: #0609ce;
+}
+
+#match .container .actions button.steal:hover {
+  background: #3d3fc7;
+}
+
+#match .container .actions button.shoot {
+  background: #bd0b0b;
+}
+
+#match .container .actions button.shoot:hover {
+  background: #d63c3c;
+}
+/*# sourceMappingURL=styles.css.map */

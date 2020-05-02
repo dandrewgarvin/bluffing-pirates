@@ -1,0 +1,24 @@
+{
+  "name": "pirates",
+  "version": "1.0.0",
+  "description": "Pirates Gambling Game",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": {
+    "name": "Andrew Garvin",
+    "email": "me@andrewgarv.in",
+    "url": "https://andrewgarv.in"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}

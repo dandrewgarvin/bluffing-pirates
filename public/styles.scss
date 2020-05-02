@@ -1,0 +1,125 @@
+h1 {
+  font-family: "Jost";
+  font-size: 48px;
+  text-align: center;
+  margin: 10px;
+}
+
+#STATUS {
+  position: absolute;
+  font-size: 12px;
+  top: 2px;
+  left: 2px;
+}
+
+.meta {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  input {
+    padding: 10px;
+    min-width: 250px;
+    border-radius: 4px;
+    border: 1px solid #777;
+    outline: none;
+  }
+
+  button {
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: 1px solid #fff;
+    color: #fff;
+    background: rgb(34, 150, 63);
+    outline: none;
+    cursor: pointer;
+
+    &:disabled {
+      background: #777;
+      cursor: not-allowed;
+    }
+  }
+}
+
+ul {
+  width: 90%;
+  margin: auto;
+  padding-top: 15px;
+}
+
+#match {
+  min-height: 50vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  .container {
+    padding-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .currency {
+      font-size: 76px;
+      margin-bottom: 10px;
+      color: rgb(214, 195, 24);
+    }
+
+    .player-action {
+      display: none;
+      margin-top: 50px;
+      font-size: 52px;
+      color: rgb(30, 194, 24);
+    }
+
+    .actions {
+      width: 60%;
+      margin-top: 25px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      button {
+        margin: 10px;
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        outline: none;
+
+        &.raise {
+          background: rgb(9, 156, 21);
+
+          &:hover {
+            background: rgb(51, 177, 62);
+          }
+        }
+
+        &.steal {
+          background: rgb(6, 9, 206);
+
+          &:hover {
+            background: rgb(61, 63, 199);
+          }
+        }
+
+        &.shoot {
+          background: rgb(189, 11, 11);
+
+          &:hover {
+            background: rgb(214, 60, 60);
+          }
+        }
+      }
+    }
+  }
+}

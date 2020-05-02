@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pirates</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link href="./reset.css" type="text/css" rel="stylesheet" />
+    <link href="./styles.css" type="text/css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+  </head>
+  <body>
+    <p id="STATUS" />
+    <h1>Pirates Game</h1>
+
+    <div class="meta">
+      <input placeholder="name" id="player_name" type="text" />
+      <input placeholder="room id" id="room_id" type="text" />
+
+      <button id="join" onclick="join()">Join Game</button>
+      <button id="start" onclick="start()" disabled>Start Game</button>
+    </div>
+
+    <ul id="players">
+      <!-- PLAYER LIST GOES HERE -->
+    </ul>
+
+    <div id="match">
+      <div class="container self">
+        <h2>Me:</h2>
+        <p id="self-wallet" class="currency">0</p>
+        <p>coins</p>
+
+        <p id="self-action" class="player-action">&#10003;</p>
+      </div>
+      <div class="container pot">
+        <h2>Pot:</h2>
+        <p id="pot" class="currency">0</p>
+        <p>coins</p>
+
+        <div class="actions">
+          <button class="raise" onclick="handlePlayerAction('raise')">
+            Raise
+          </button>
+          <button class="steal" onclick="handlePlayerAction('steal')">
+            Steal
+          </button>
+          <button class="shoot" onclick="handlePlayerAction('shoot')">
+            Shoot
+          </button>
+        </div>
+      </div>
+      <div class="container opponent">
+        <h2>Opponent:</h2>
+        <p id="opponent-wallet" class="currency">0</p>
+        <p>coins</p>
+
+        <p id="opponent-action" class="player-action">&#10003;</p>
+      </div>
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
