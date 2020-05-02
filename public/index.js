@@ -123,6 +123,7 @@ function receiveEmissions() {
     UPDATE_STATUS(STATUSES.WAITING);
 
     if (match.ended) {
+      console.log("Match Ended:", match);
       alert(
         `The match has ended! ${
           match.winner
