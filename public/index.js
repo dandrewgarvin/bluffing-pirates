@@ -123,7 +123,13 @@ function receiveEmissions() {
     UPDATE_STATUS(STATUSES.WAITING);
 
     if (match.ended) {
-      alert("The match has ended!");
+      alert(
+        `The match has ended! ${
+          match.winner
+            ? `${match.winner.name} has won!`
+            : "There are no winners."
+        }`
+      );
     } else {
       // hide action buttons
       document.getElementById("self-action").style.display = "none";

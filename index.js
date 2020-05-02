@@ -180,9 +180,10 @@ io.on("connection", (socket) => {
         }
       } else if (actions.shoot === 2) {
         console.log("both players shot");
-        // pot is clearer, neither player gets it, game is over.
+        // pot is clearerd, neither player gets it, game is over.
         match.pot = 0;
         match.ended = true;
+        match.winner = null;
       } else if (actions.raise === 1 && actions.steal === 1) {
         console.log("1 player stole, 1 player raised");
         // pot goes to player who stole. if a player cannot meet raise amount, game is over
@@ -206,8 +207,8 @@ io.on("connection", (socket) => {
         }
       } else if (actions.raise === 1 && actions.shoot === 1) {
         console.log("1 player raised 1 player shot");
-        // pot goes to player who shot. match is ended
-        if (match.self.action === "shoot") {
+        // pot goes to player who raised. match is ended
+        if (match.self.action === "raise") {
           match.self.wallet += match.pot;
           match.winner = match.self;
         } else {
