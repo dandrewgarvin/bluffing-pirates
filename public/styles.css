@@ -57,8 +57,7 @@ ul {
 
 #match {
   min-height: 50vh;
-  display: -ms-grid;
-  display: grid;
+  display: none;
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
 }
