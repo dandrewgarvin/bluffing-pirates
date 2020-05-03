@@ -13,11 +13,15 @@ h1 {
 }
 
 .meta {
-  width: 90%;
+  width: 80%;
   margin: auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+
+  label {
+    margin: 0px 10px;
+  }
 
   input {
     padding: 10px;
