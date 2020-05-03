@@ -160,7 +160,7 @@ io.on("connection", (socket) => {
         ) {
           match.ended = true;
           match.winner =
-            match.self.wallet < config.raiseAmount
+            match.self.wallet > config.raiseAmount
               ? match.self
               : match.opponent;
           match.reason = "There were not enough funds to keep playing.";
@@ -175,7 +175,7 @@ io.on("connection", (socket) => {
         ) {
           match.ended = true;
           match.winner =
-            match.self.wallet < config.raiseAmount
+            match.self.wallet > config.raiseAmount
               ? match.self
               : match.opponent;
           match.reason = "There were not enough funds to continue";
@@ -204,7 +204,7 @@ io.on("connection", (socket) => {
         ) {
           match.ended = true;
           match.winner =
-            match.self.wallet < config.raiseAmount
+            match.self.wallet > config.raiseAmount
               ? match.self
               : match.opponent;
           match.reason = "There are not enough funds to go on.";
@@ -241,7 +241,7 @@ io.on("connection", (socket) => {
         ) {
           match.ended = true;
           match.winner =
-            match.self.wallet < config.raiseAmount
+            match.self.wallet > config.raiseAmount
               ? match.self
               : match.opponent;
           match.reason =
