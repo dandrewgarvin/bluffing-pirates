@@ -163,6 +163,7 @@ io.on("connection", (socket) => {
             match.self.wallet < config.raiseAmount
               ? match.self
               : match.opponent;
+          match.reason = "There were not enough funds to keep playing.";
         }
       } else if (actions.steal === 2) {
         console.log("both players stole");
@@ -177,6 +178,7 @@ io.on("connection", (socket) => {
             match.self.wallet < config.raiseAmount
               ? match.self
               : match.opponent;
+          match.reason = "There were not enough funds to continue";
         }
       } else if (actions.shoot === 2) {
         console.log("both players shot");
@@ -184,6 +186,7 @@ io.on("connection", (socket) => {
         match.pot = 0;
         match.ended = true;
         match.winner = null;
+        match.reason = "You shot each other!";
       } else if (actions.raise === 1 && actions.steal === 1) {
         console.log("1 player stole, 1 player raised");
         // pot goes to player who stole. if a player cannot meet raise amount, game is over
@@ -204,6 +207,7 @@ io.on("connection", (socket) => {
             match.self.wallet < config.raiseAmount
               ? match.self
               : match.opponent;
+          match.reason = "There are not enough funds to go on.";
         }
       } else if (actions.raise === 1 && actions.shoot === 1) {
         console.log("1 player raised 1 player shot");
@@ -216,6 +220,7 @@ io.on("connection", (socket) => {
           match.winner = match.opponent;
         }
 
+        match.reason = "An innocent was shot!";
         match.pot = 0;
 
         match.ended = true;
@@ -239,6 +244,8 @@ io.on("connection", (socket) => {
             match.self.wallet < config.raiseAmount
               ? match.self
               : match.opponent;
+          match.reason =
+            "It looks like your bank account is running a little dry!";
         }
       } else {
         // nothing should happen here
@@ -257,7 +264,11 @@ io.on("connection", (socket) => {
         // if all matches in room are ended, re-generate match list
 
         // let both players know the match is over
-        socket.emit("round ended", { ended: true, winner: match.winner });
+        socket.emit("round ended", {
+          ended: true,
+          winner: match.winner,
+          reason: match.reason,
+        });
         io.to(opponent).emit("round ended", {
           ended: true,
           winner: match.winner,
