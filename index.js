@@ -269,9 +269,11 @@ io.on("connection", (socket) => {
           winner: match.winner,
           reason: match.reason,
         });
+
         io.to(opponent).emit("round ended", {
           ended: true,
           winner: match.winner,
+          reason: match.reason,
         });
 
         return null;
